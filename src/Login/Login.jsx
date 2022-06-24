@@ -14,7 +14,7 @@ export default class Login extends Component {
         username,
         password,
     }
-    axios.get('/api/login ',param).then(function(response){
+    axios.post('/api/login ',param).then(function(response){
         console.log(response);
     }).catch(function(error){
         console.log(error);

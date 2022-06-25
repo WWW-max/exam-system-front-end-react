@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Input, Button } from 'antd';
+import 'antd/dist/antd.css';
 import axios from 'axios';
 
 export default class Login extends Component {

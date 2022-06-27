@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Input, Button } from 'antd';
 import 'antd/dist/antd.css';
+import './Login.css';
 import axios from 'axios';
 
 export default class Login extends Component {
@@ -18,7 +19,7 @@ export default class Login extends Component {
     axios.post('/api/login ',param).then(function(response){
         console.log(response);
     }).catch(function(error){
-        console.log(error);
+        console.log('用户名或密码错误');
     })
   }
   reset = () => {
@@ -43,12 +44,18 @@ export default class Login extends Component {
   render() {
     const {username, password} = this.state;
     return (
-      <div>
-        账号：<Input type='text' value={username} onChange={this.usernameChange}/><br/><br/><br/>
-        密码：<Input type='password' value={password} onChange={this.passwordChange}/><br/>
-        <Button type="primary" onClick={this.signIn}>登录</Button>&nbsp;  
-        <Button type="primary" onClick={this.reset}>重置</Button>  
+     <div className='container'>
+       <div className='login'>
+        <div className='main'>
+            账号：<Input style={{width:'250px'}} type='text' value={username} onChange={this.usernameChange}/><br/><br/><br/>
+            密码：<Input style={{width:'250px'}}type='password' value={password} onChange={this.passwordChange}/><br/>
+        </div>
+        <div className='footer'>
+            <Button type="primary" onClick={this.signIn}>登录</Button>&nbsp;  
+            <Button type="primary" onClick={this.reset}>重置</Button>  
+        </div>
       </div>
+     </div>
     )
   }
 }

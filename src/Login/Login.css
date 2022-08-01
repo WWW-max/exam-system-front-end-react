@@ -16,7 +16,11 @@ html,body {
     /* background-color: yellowgreen; */
     width: 400px;
     height: 300px;
-    
+    margin-top: 150px;
+    text-align: center;
+}
+.header {
+   font-size: 30px;
 }
 .main {
     margin-top: 20px;

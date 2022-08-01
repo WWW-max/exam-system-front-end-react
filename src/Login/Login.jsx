@@ -46,12 +46,13 @@ export default class Login extends Component {
     return (
      <div className='container'>
        <div className='login'>
+        <div className='header'>《数据结构》在线考试系统</div>
         <div className='main'>
             账号：<Input style={{width:'250px'}} type='text' value={username} onChange={this.usernameChange}/><br/><br/><br/>
             密码：<Input style={{width:'250px'}}type='password' value={password} onChange={this.passwordChange}/><br/>
         </div>
         <div className='footer'>
-            <Button type="primary" onClick={this.signIn}>登录</Button>&nbsp;  
+            <Button type="primary" onClick={this.signIn}>登录</Button>&nbsp;&nbsp;&nbsp;  
             <Button type="primary" onClick={this.reset}>重置</Button>  
         </div>
       </div>

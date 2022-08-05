@@ -9,6 +9,7 @@ export default function Login() {
 
   const [userName,setUserName] = useState('');
   const [passWord,setPassWord] = useState('');
+  const [loginFailed,setLoginFailed] = useState(false);
   const Navigate = useNavigate();
 
   const signIn = () => {
@@ -22,6 +23,7 @@ export default function Login() {
       Navigate('/welcome');// 登录成功，跳转到欢迎界面
     }).catch(function(error){
         console.log('用户名或密码错误');
+        setLoginFailed(true);
     })
   }
   const reset = () => {
@@ -45,6 +47,7 @@ export default function Login() {
          账号：<Input style={{width:'250px'}} type='text' value={userName} onChange={usernameChange}/><br/><br/><br/>
          密码：<Input style={{width:'250px'}}type='password' value={passWord} onChange={passwordChange}/><br/>
      </div>
+     {loginFailed && <div className='red'>账号或密码错误</div>}
      <div className='footer'>
          <Button type="primary" onClick={signIn}>登录</Button>&nbsp;&nbsp;&nbsp;  
          <Button type="primary" onClick={reset}>重置</Button>  

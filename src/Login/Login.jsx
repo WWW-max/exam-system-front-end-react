@@ -20,6 +20,7 @@ export default function Login() {
     }
     axios.post('/api/login ',param).then(function(response){
       console.log('用户名密码正确');
+      sessionStorage.setItem('userName',userName);
       Navigate('/welcome');// 登录成功，跳转到欢迎界面
     }).catch(function(error){
         console.log('用户名或密码错误');
